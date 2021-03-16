@@ -5,7 +5,7 @@ let config = require('./jsreport.config.json')
 
 config.httpPort = process.env.PORT
 
-fs.writeFile('jsreport.config.json', config, 'utf8', () => {
+fs.writeFile('jsreport.config.json', JSON.stringify(config), 'utf8', () => {
 
     const ls = spawn('./jsreport', ['start']);
 

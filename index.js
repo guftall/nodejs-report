@@ -18,7 +18,7 @@ app.get('/api/report-service', (req, res) => {
 
     jsReport.stderr.on('data', (data) => {
         console.log(data);
-        res.writable(data)
+        res.write(data)
     });
 
     jsReport.on('close', (code) => {

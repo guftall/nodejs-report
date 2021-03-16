@@ -13,11 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "handlebars": "^4.7.7",
-    "jsreport-chrome-pdf": "^1.10.0",
-    "jsreport-core": "^2.10.1",
-    "jsreport-handlebars": "^2.1.0",
-    "puppeteer": "^8.0.0"
+    "express": "^4.17.1"
   }
 }

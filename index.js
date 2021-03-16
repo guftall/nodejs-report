@@ -1,28 +1,43 @@
 const express = require('express');
-const jsreport = require('jsreport-core')()
+const { spawn } = require('child_process');
+
+const jsReport = spawn('./jsreport',
+    ['report',
+        `--out=${Date.now()}.pdf`,
+        '--template.name=daily-report-template.html']);
+
+jsReport.stdout.on('data', (data) => {
+    console.log(data);
+});
+
+jsReport.stderr.on('data', (data) => {
+    console.log(data);
+});
+
+jsReport.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+});
+
 const app = express();
 
-jsreport.init().then(() => {
+app.get('/api/report-service', (req, res) => {
+    const jsReport = spawn('./jsreport',
+        ['report',
+            `--out=${Date.now()}.pdf`,
+            '--template.name=daily-report-template.html']);
 
-    app.get('/api/report-service', (req, res) => {
-        jsreport.render({
-            template: {
-                content: '<h1>Hello {{foo}}</h1>',
-                engine: 'handlebars',
-                recipe: 'chrome-pdf'
-            },
-            data: {
-                foo: "world"
-            }
-        }).then((resp) => {
-            // prints pdf with headline Hello world
-            res.end(resp.content)
-            console.log(resp.content.toString())
-        });
+    jsReport.stdout.on('data', (data) => {
+        console.log(data);
     });
-}).catch((e) => {
-    console.error(e)
-})
+
+    jsReport.stderr.on('data', (data) => {
+        console.log(data);
+    });
+
+    jsReport.on('close', (code) => {
+        console.log(`child process exited with code ${code}`);
+    });
+});
 
 
 const server = app.listen(3000);

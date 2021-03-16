@@ -1,0 +1,175 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        @font-face {
+            font-family: 'Vazir';
+            src: url('Vazir.woff') format('woff');
+        }
+
+        body {
+            font-family: Vazir;
+            padding: 24px;
+            font-size: 1rem;
+        }
+
+        .header {
+            height: 120px;
+            width: 100%;
+            direction: rtl;
+        }
+
+        .header .logo {
+            height: 100%;
+            float: right;
+        }
+
+        .header .title {
+            text-align: right;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .header .date {
+            float: left;
+            font-size: 24px;
+            font-weight: bold;
+            padding-top: 16px;
+        }
+
+        .content {
+            margin: 80px;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .content .student-details {}
+
+        .report-area {
+            margin-top: 80px;
+            height: 200px;
+        }
+
+        table {
+            border: 1px solid rgb(200, 200, 200);
+            letter-spacing: 1px;
+            width: 100%;
+            height: 100%;
+            font-size: 22px;
+            color: #353535;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        th[scope="col"] {
+            color: #7B7B7B;
+        }
+
+        .sum {
+            background-color: #b5b5b5;
+        }
+
+        .report-details {
+            margin-top: 40px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 32px;
+            font-size: 14px;
+        }
+
+        .bg {
+            background-color: red;
+        }
+
+        .bg1 {
+            background-color: rgb(12, 158, 19);
+        }
+
+        .bg2 {
+            background-color: rgb(28, 169, 194);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo-area">
+            <img class="logo" src="logo.png" />
+        </div>
+        <div class="title">
+            <p>مدیکال استیودنتس</p>
+        </div>
+        <div class="date">
+            <p>
+                گزارش ۱۹/۱۱/۱۳۹۹
+            </p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="student-details">
+            <p>
+                <span>*</span> نام دانش‌آموز:‌ حامد غفارپور
+            </p>
+            <p>
+                <span>*</span> نام مشاور:‌ یوسف یوسف پور
+            </p>
+        </div>
+        <div class="report-area">
+            <div class="report-table">
+                <table>
+                    <tr>
+                        <th scope="col">نام درس</th>
+                        <th scope="col">ساعت</th>
+                        <th scope="col">تعداد تست</th>
+                        <th scope="col">بازه ساعتی</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">ریاضی</th>
+                        <td>۳</td>
+                        <td>۲۴</td>
+                        <td>۸:۳۰ تا ۱۰</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">فیزیک</th>
+                        <td>۳</td>
+                        <td>۲۴</td>
+                        <td>۸:۳۰ تا ۱۰</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">شیمی</th>
+                        <td>۳</td>
+                        <td>۲۴</td>
+                        <td>۸:۳۰ تا ۱۰</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="sum">جمع</th>
+                        <td>۹</td>
+                        <td>۸۹</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="report-details">
+                <p>جمع ساعت مطالعه دیروز: ۳ ساعت</p>
+                <p>جمع تعداد تست دیروز:‌۲۴</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <p>پنل دانش‌آموزان مدیکال استیودنتس</p>
+    </div>
+</body>
+
+</html>

@@ -3,7 +3,7 @@ var fs = require('fs');
 
 let config = require('./jsreport.config.json')
 
-config.httpPort = process.env.Port
+config.httpPort = process.env.Port || 3002
 
 fs.writeFile('jsreport.config.json', JSON.stringify(config), 'utf8', () => {
 

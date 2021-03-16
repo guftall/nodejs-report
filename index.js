@@ -4,7 +4,7 @@ const app = express();
 
 jsreport.init().then(() => {
 
-    app.get('/', (req, res) => {
+    app.get('/api/report-service', (req, res) => {
         jsreport.render({
             template: {
                 content: '<h1>Hello {{foo}}</h1>',

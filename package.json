@@ -1,0 +1,22 @@
+{
+  "name": "report-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:guftall/medical-student/report-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsreport-core": "^2.10.1",
+    "jsreport-handlebars": "^2.10.1",
+    "jsreport-chrome-pdf": "^1.10.0",
+    "jsreport-chrome-pdf": "^8.0.0"
+  }
+}

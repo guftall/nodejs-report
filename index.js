@@ -12,17 +12,19 @@ app.get('/api/report-service', (req, res) => {
             '--template.content=daily-report-template.html']);
 
     jsReport.stdout.on('data', (data) => {
+        res.write(data)
         console.log(data);
     });
 
     jsReport.stderr.on('data', (data) => {
         console.log(data);
+        res.writable(data)
     });
 
     jsReport.on('close', (code) => {
         console.log(`child process exited with code ${code}`);
+        res.end(code)
     });
-    res.send('ok')
 });
 
 

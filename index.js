@@ -1,14 +1,23 @@
-const { spawn } = require( 'child_process' );
-const ls = spawn( './jsreport', [ 'start' ] );
+const { spawn } = require('child_process');
+var fs = require('fs');
 
-ls.stdout.on( 'data', ( data ) => {
-    console.log(data);
-} );
+let config = require('./jsreport.config.json')
 
-ls.stderr.on( 'data', ( data ) => {
-    console.log(data);
-} );
+config.httpPort = process.env.PORT
 
-ls.on( 'close', ( code ) => {
-    console.log( `child process exited with code ${ code }` );
-} );
+fs.writeFile('jsreport.config.json', config, 'utf8', () => {
+
+    const ls = spawn('./jsreport', ['start']);
+
+    ls.stdout.on('data', (data) => {
+        console.log(data);
+    });
+
+    ls.stderr.on('data', (data) => {
+        console.log(data);
+    });
+
+    ls.on('close', (code) => {
+        console.log(`child process exited with code ${code}`);
+    });
+});

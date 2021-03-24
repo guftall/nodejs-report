@@ -6,6 +6,7 @@ const { Log } = require('./logger');
 
 config.httpPort = process.env.Port || 3002
 
+Log.debug('writing back data:', {data: JSON.stringify(config)})
 fs.writeFile('jsreport.config.json', JSON.stringify(config), 'utf8', () => {
 
     const ls = spawn('./jsreport', ['start']);

@@ -5,7 +5,7 @@ var fs = require('fs');
 let config = require('./jsreport.config.json');
 const { Log } = require('./logger');
 
-config.httpPort = process.env.Port || 3000
+config.httpPort = process.env.Port || 3002
 
 Log.debug('writing back data:', {data: JSON.stringify(config)})
 fs.writeFile('jsreport.config.json', JSON.stringify(config), 'utf8', () => {
@@ -25,4 +25,4 @@ fs.writeFile('jsreport.config.json', JSON.stringify(config), 'utf8', () => {
     });
 });
 
-// httpProxy.createProxyServer({target:'http://localhost:3002'}).listen(3000);
+httpProxy.createProxyServer({target:'http://localhost:3002'}).listen(3000);

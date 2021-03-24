@@ -12,13 +12,13 @@ fs.writeFile('jsreport.config.json', JSON.stringify(config), 'utf8', () => {
 
     const ls = spawn('./jsreport', ['start']);
 
-    ls.stdout.on('data', (data) => {
-        Log.debug(data)
-    });
+    // ls.stdout.on('data', (data) => {
+    //     Log.debug(data)
+    // });
 
-    ls.stderr.on('data', (data) => {
-        Log.error(data)
-    });
+    // ls.stderr.on('data', (data) => {
+    //     Log.error(data)
+    // });
 
     ls.on('close', (code) => {
         Log.info('closed', code)

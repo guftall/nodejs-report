@@ -25,4 +25,4 @@ fs.writeFile('jsreport.config.json', JSON.stringify(config), 'utf8', () => {
     });
 });
 
-httpProxy.createProxyServer({target:'http://localhost:3002', ws: true,}).listen(3000);
+// httpProxy.createProxyServer({target:'http://localhost:3002', ws: true,}).listen(3000);

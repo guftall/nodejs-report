@@ -1,6 +1,6 @@
 node_modules/
 jsreport.config.json
 jsreport
-stderr.lo
+stderr.log
 tmp/
 data/

@@ -3,3 +3,4 @@ jsreport.config.json
 jsreport
 stderr.lo
 tmp/
+data/
